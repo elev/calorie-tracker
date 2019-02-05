@@ -7,13 +7,28 @@ class Main extends Component {
         return (
             <div className="Main">
                 <Header />
-
-                <Link to="add-food">
-                    <button>Add Food</button>
-                </Link>
-                <Link to="add-exercise">
-                    <button>Add Exercise</button>
-                </Link>
+                <div className="content">
+                    <div className="ActionButton">
+                        <Link to="add-food">
+                            <button>Add Food</button>
+                        </Link>
+                    </div>
+                    <div className="ActionButton">
+                        <Link to="add-exercise">
+                            <button>Add Exercise</button>
+                        </Link>
+                    </div>
+                    <div className="ActionButton">
+                        <Link to="macros">
+                            <button>View Macros</button>
+                        </Link>
+                    </div>
+                    <div className="ActionButton">
+                        <Link to="goals">
+                            <button>Update Goals</button>
+                        </Link>
+                    </div>
+                </div>
             </div>
         )
     }

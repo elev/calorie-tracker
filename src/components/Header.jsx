@@ -8,11 +8,11 @@ class Header extends Component {
         return (
             <div className='Header'>
                 <Link to="/">
-                    <h2 class="title">Calorie Tracker</h2>
+                    <h2 className="title">Calorie Tracker</h2>
                 </Link>
                 {/* these counts will be dynamic perhaps their own component */}
-                <div class="count">This is the count</div>
-                <div class="count">This is whats left</div>
+                <div className="count">Consumed: _700</div>
+                <div className="count">Left: _2000</div>
             </div>
         )
     }
