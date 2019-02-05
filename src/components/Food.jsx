@@ -8,7 +8,22 @@ class Food extends Component {
         return (
             <div className="Food">
                 <Header />
-                Add Food
+                { /* this should probably be it's own component */}
+                <form>
+                    <label htmlFor="quickAdd">QuickAdd Calories:</label>
+                    <input  id="quickAdd" type="text" placeholder="Search" />
+                    <input type="submit" value="Submit" />
+                </form>
+                <div className="ActionButton">
+                    <Link to="use-saved-food">
+                        <button>Use Saved Food</button>
+                    </Link>
+                </div>
+                <div className="ActionButton">
+                    <Link to="create-new-food">
+                        <button>Create New Food</button>
+                    </Link>
+                </div>
             </div>
         )
     }
