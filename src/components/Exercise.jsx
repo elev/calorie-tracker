@@ -8,7 +8,21 @@ class Exercise extends Component {
         return (
             <div className="Exercise">
                 <Header />
-                Add Exercise
+                <form>
+                    <label htmlFor="caloriesBurned">QuickAdd Excercise:</label>
+                    <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                    <input type="submit" value="Submit" />
+                </form>
+                <div className="ActionButton">
+                    <Link to="use-saved-execise">
+                        <button>Use Saved Exercise</button>
+                    </Link>
+                </div>
+                <div className="ActionButton">
+                    <Link to="create-new-exercise">
+                        <button>Create New Execise</button>
+                    </Link>
+                </div>
             </div>
         )
     }

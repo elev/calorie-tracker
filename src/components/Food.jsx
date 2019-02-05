@@ -10,8 +10,21 @@ class Food extends Component {
                 <Header />
                 { /* this should probably be it's own component */}
                 <form>
-                    <label htmlFor="quickAdd">QuickAdd Calories:</label>
-                    <input  id="quickAdd" type="text" placeholder="Search" />
+                    <label htmlFor="caloriesConsumed">Calories Consumed:</label>
+                    <input  id="caloriesConsumed" type="text" placeholder="Calories Consumed" />
+
+                    <div className="optionaMacros">
+                        <h2>Optional Macros Consumed</h2>
+
+                        <label htmlFor="ProteinConsumed"></label>
+                        <input  id="ProteinConsumed" type="text" placeholder="Protein Consumed" />
+
+                        <label htmlFor="CarbsConsumed"></label>
+                        <input  id="CarbsConsumed" type="text" placeholder="Carbs Consumed" />
+
+                        <label htmlFor="FatConsumed"></label>
+                        <input  id="FatConsumed" type="text" placeholder="Fat Consumed" />
+                    </div>
                     <input type="submit" value="Submit" />
                 </form>
                 <div className="ActionButton">
