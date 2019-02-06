@@ -6,30 +6,30 @@ import Header from './Header';
 class Exercise extends Component {
     render() {
         return (
-            <div className="Exercise">
+            <div className="exercise">
                 <Header />
                 <form>
                     <div>
-                        <label htmlFor="caloriesBurned">QuickAdd Excercise:</label>
-                        <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                        <label htmlFor="calories">Calories Burned: </label>
+                        <input id="calories" type="text" placeholder="Calories" />
                     </div>
                     <div>
                         <input type="submit" value="Submit" />
                     </div>
                     <div>
-                        <label htmlFor="caloriesBurned">Optional Name</label>
-                        <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                        <label htmlFor="name">Optional Name</label>
+                        <input id="name" type="text" placeholder="Name" />
                     </div>
                     <div>
                         <input type="submit" value="Submit and Save as New" />
                     </div>
                 </form>
-                <div className="ActionButton">
+                <div className="action-button">
                     <Link to="use-saved-execise">
                         <button>Use Saved Exercise</button>
                     </Link>
                 </div>
-                <div className="ActionButton">
+                <div className="action-button">
                     <Link to="create-new-exercise">
                         <button>Create New Execise</button>
                     </Link>

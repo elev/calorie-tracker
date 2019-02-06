@@ -17,10 +17,10 @@ class App extends Component {
           <Switch>
             <Route exact path="/" component={Main} />
             <Route path="/add-food" component={Food} />
+            <Route path="/create-new-food" component={NewFood} />
             <Route path="/add-exercise" component={Exercise} />
             <Route path="/create-new-exercise" component={NewExercise} />
             <Route path="/goals" component={Goals} />
-            <Route path="/create-new-food" component={NewFood} />
             <Route path="/view-macros" component={ViewMacros} />
           </Switch>
         </BrowserRouter>

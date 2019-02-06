@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 
 
 class NewExercise extends Component {
     render() {
         return (
-            <div className="NewExercise">
+            <div className="new-exercise">
                 <Header />
                 <form>
                     <div>
@@ -14,8 +13,8 @@ class NewExercise extends Component {
                         <input id="name" type="text" placeholder="Name" />
                     </div>
                     <div>
-                        <label htmlFor="caloriesBurned">QuickAdd Excercise:</label>
-                        <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                        <label htmlFor="calories">Calories Burned: </label>
+                        <input id="calories" type="text" placeholder="Calories Burned" />
                     </div>
                     <div>
                         <input type="submit" value="Save as New" />

@@ -1,36 +1,35 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import Header from './Header';
 
 
 class NewFood extends Component {
     render() {
         return (
-            <div className="NewFood">
+            <div className="new-food">
                 <Header />
                 { /* make this form a component? But erroring on duplication instead of wrong abstraction right now.*/ }
                 <form>
                     <div>
-                        <label htmlFor="newFoodName">New Food Name</label>
-                        <input  id="newFoodName" type="text" placeholder="newFoodName" />
+                        <label htmlFor="name">Name: </label>
+                        <input id="name" type="text" placeholder="Name" />
                     </div>
                     <div>
-                        <label htmlFor="newFoodCalories">New Food Calories</label>
-                        <input  id="newFoodCalories" type="text" placeholder="newFoodCalories" />
+                        <label htmlFor="calories">Calories: </label>
+                        <input id="calories" type="text" placeholder="Calories" />
                     </div>                    
-                    <div className="optionaMacros">
-                        <h2>New Food Macros</h2>
+                    <div className="optional-macros">
+                        <h2>Optional Macros</h2>
                         <div>
-                            <label htmlFor="NewFoodProtein"></label>
-                            <input  id="NewFoodProtein" type="text" placeholder="Protein" />
+                            <label htmlFor="protein">Protein: </label>
+                            <input id="protein" type="text" placeholder="Protein" />
                         </div>
                         <div>
-                            <label htmlFor="NewFoodCarbs"></label>
-                            <input  id="NewFoodCarbs" type="text" placeholder="Carbs" />
+                            <label htmlFor="carbs">Carbs: </label>
+                            <input id="carbs" type="text" placeholder="Carbs" />
                         </div>
                         <div>
-                            <label htmlFor="NewFoodFat"></label>
-                            <input  id="NewFoodFat" type="text" placeholder="Fat" />
+                            <label htmlFor="fat">Fat: </label>
+                            <input id="fat" type="text" placeholder="Fat" />
                         </div>
                     </div>
                     <input type="submit" value="Submit" />
