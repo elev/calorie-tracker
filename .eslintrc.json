@@ -1,6 +1,14 @@
 {
-    "extends": "airbnb",
+    "extends": ["plugin:prettier/recommended"],
     "rules": {
         "react/prefer-stateless-function": "off"
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true,
+            "modules": true
+        }
     }
 }

@@ -1,13 +1,13 @@
-import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import './App.css';
-import Main from './components/Main';
-import Food from './components/Food';
-import Exercise from './components/Exercise';
-import NewExercise from './components/NewExercise';
-import Goals from './components/Goals';
-import NewFood from './components/NewFood';
-import ViewMacros from './components/ViewMacros';
+import React, { Component } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import "./App.css";
+import Main from "./components/Main";
+import Food from "./components/Food";
+import Exercise from "./components/Exercise";
+import NewExercise from "./components/NewExercise";
+import Goals from "./components/Goals";
+import NewFood from "./components/NewFood";
+import ViewMacros from "./components/ViewMacros";
 
 class App extends Component {
   render() {
