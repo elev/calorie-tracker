@@ -19,7 +19,7 @@ class Main extends Component {
                         </Link>
                     </div>
                     <div className="ActionButton">
-                        <Link to="macros">
+                        <Link to="view-macros">
                             <button>View Macros</button>
                         </Link>
                     </div>

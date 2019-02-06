@@ -9,9 +9,20 @@ class Exercise extends Component {
             <div className="Exercise">
                 <Header />
                 <form>
-                    <label htmlFor="caloriesBurned">QuickAdd Excercise:</label>
-                    <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
-                    <input type="submit" value="Submit" />
+                    <div>
+                        <label htmlFor="caloriesBurned">QuickAdd Excercise:</label>
+                        <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit" />
+                    </div>
+                    <div>
+                        <label htmlFor="caloriesBurned">Optional Name</label>
+                        <input id="caloriesBurned" type="text" placeholder="Calories Burned" />
+                    </div>
+                    <div>
+                        <input type="submit" value="Submit and Save as New" />
+                    </div>
                 </form>
                 <div className="ActionButton">
                     <Link to="use-saved-execise">
