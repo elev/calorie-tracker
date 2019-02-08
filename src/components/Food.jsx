@@ -5,23 +5,47 @@ import Header from "./Header";
 class Food extends Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      calorieAmount: 0
+    };
+
+    this.updateCalories = this.updateCalories.bind(this);
+    this.submitQuickAmount = this.submitQuickAmount.bind(this);
+  }
+
+  updateCalories(event) {
+    this.setState({ calorieAmount: event.target.value });
+  }
+
+  submitQuickAmount(event) {
+    // todo, change this to a submit event
+    event.preventDefault();
+    this.props.updateCalorieCount(this.stateCalorieAmount);
   }
 
   render() {
     return (
       <div className="food">
         <Header />
-        {/* this should probably be it's own component */}
+        {/* Todo, break form elements out into individual components? */}
         <form>
           <label htmlFor="calories">
             Calories:
             <input
               id="calories"
-              type="text"
-              onChange={this.props.updateCalorieCount}
+              type="number"
+              pattern="[0-9]*"
               placeholder="Calories"
+              onChange={this.updateCalories}
+              value={this.state.calorieAmount}
             />
           </label>
+          <input
+            type="submit"
+            onClick={this.submitQuickAmount}
+            value="Submit Quick Amount"
+          />
 
           <div className="optional-name">
             <input id="name" type="text" placeholder="Name" />
