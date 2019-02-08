@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import Header from "./Header";
 
 class Food extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="food">
@@ -11,7 +15,12 @@ class Food extends Component {
         <form>
           <label htmlFor="calories">
             Calories:
-            <input id="calories" type="text" placeholder="Calories" />
+            <input
+              id="calories"
+              type="text"
+              onChange={this.props.updateCalorieCount}
+              placeholder="Calories"
+            />
           </label>
 
           <div className="optional-name">
