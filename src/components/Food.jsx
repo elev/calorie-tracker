@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 
 class Food extends Component {
   constructor(props) {
@@ -19,15 +18,13 @@ class Food extends Component {
   }
 
   submitQuickAmount(event) {
-    // todo, change this to a submit event
     event.preventDefault();
-    this.props.updateCalorieCount(this.stateCalorieAmount);
+    this.props.updateCalorieCount(parseInt(this.state.calorieAmount));
   }
 
   render() {
     return (
       <div className="food">
-        <Header />
         {/* Todo, break form elements out into individual components? */}
         <form>
           <label htmlFor="calories">

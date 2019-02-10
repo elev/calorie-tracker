@@ -1,12 +1,10 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
 
 class Exercise extends Component {
   render() {
     return (
       <div className="exercise">
-        <Header />
         <form>
           <div>
             <label htmlFor="calories">Calories Burned: </label>

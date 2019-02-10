@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Header from "./Header";
 
 class NewFood extends Component {
   render() {
     return (
       <div className="new-food">
-        <Header />
         {/* make this form a component? But erroring on duplication instead of wrong abstraction right now.*/}
         <form>
           <div>

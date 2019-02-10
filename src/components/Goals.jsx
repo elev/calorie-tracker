@@ -1,11 +1,9 @@
 import React, { Component } from "react";
-import Header from "./Header";
 
 class Goals extends Component {
   render() {
     return (
       <div className="goals">
-        <Header />
         <form>
           <h2>Daily Food Goals</h2>
           <div>
