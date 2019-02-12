@@ -50,7 +50,15 @@ class App extends Component {
                 )}
               />
               <Route path="/create-new-food" component={NewFood} />
-              <Route path="/add-exercise" component={Exercise} />
+              <Route
+                path="/add-exercise"
+                render={routeProps => (
+                  <Exercise
+                    {...routeProps}
+                    updateCalorieCount={this.updateCalorieCount}
+                  />
+                )}
+              />
               <Route path="/create-new-exercise" component={NewExercise} />
               <Route path="/goals" component={Goals} />
               <Route path="/view-macros" component={ViewMacros} />

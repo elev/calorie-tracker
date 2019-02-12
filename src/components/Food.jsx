@@ -9,17 +9,18 @@ class Food extends Component {
       calorieAmount: 0
     };
 
-    this.updateCalories = this.updateCalories.bind(this);
+    this.updateLocalCalories = this.updateLocalCalories.bind(this);
     this.submitQuickAmount = this.submitQuickAmount.bind(this);
   }
 
-  updateCalories(event) {
+  updateLocalCalories(event) {
     this.setState({ calorieAmount: event.target.value });
   }
 
   submitQuickAmount(event) {
     event.preventDefault();
     this.props.updateCalorieCount(parseInt(this.state.calorieAmount));
+    this.setState({ calorieAmount: 0 });
   }
 
   render() {
