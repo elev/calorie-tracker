@@ -70,8 +70,8 @@ class Food extends Component {
               <input id="fat" type="text" placeholder="Fat" />
             </label>
           </div>
-          <input type="submit" value="Submit" />
-          <input type="submit" value="Submit and Save as New" />
+          <input type="submit" value="Submit and Save as New Food" />
+          <input type="submit" value="Save as New Food Only" />
         </form>
 
         <div className="action-button">
@@ -79,11 +79,7 @@ class Food extends Component {
             <button type="button">Use Saved Food</button>
           </Link>
         </div>
-        <div className="action-button">
-          <Link to="create-new-food">
-            <button type="button">Create New Food</button>
-          </Link>
-        </div>
+        <div className="saved-items">List saved items here</div>
       </div>
     );
   }

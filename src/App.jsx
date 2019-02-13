@@ -5,9 +5,7 @@ import Main from "./components/Main";
 import Header from "./components/Header";
 import Food from "./components/Food";
 import Exercise from "./components/Exercise";
-import NewExercise from "./components/NewExercise";
 import Goals from "./components/Goals";
-import NewFood from "./components/NewFood";
 import ViewMacros from "./components/ViewMacros";
 
 class App extends Component {
@@ -15,23 +13,46 @@ class App extends Component {
     super(props);
     this.state = {
       calorieCount: 0,
-      dailyGoal: 1800 // change this to not be magic later.
+      dailyGoal: 1800, // change this to not be magic later.
+      foods: [],
+      exercises: []
     };
 
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
+    this.saveFood = this.saveFood.bind(this);
+    this.saveExercise = this.saveExercise.bind(this);
   }
 
   updateCalorieCount(amount) {
-    // add validation, debounce, or change this to only work on submit...
-    // we may need a validation library
     this.setState({
       calorieCount: this.state.calorieCount + amount
+    });
+  }
+
+  saveExercise(exercise) {
+    this.setState({
+      exercises: [...this.state.exercises, exercise]
+    });
+  }
+
+  saveFood(food) {
+    this.setState({
+      food: [...this.state.food, food]
     });
   }
 
   render() {
     return (
       <div className="App">
+        <ul>
+          {this.state.exercises.map(v => {
+            return (
+              <li>
+                {v.name}, {v.calories}
+              </li>
+            );
+          })}
+        </ul>
         <BrowserRouter>
           <div>
             <Header
@@ -46,20 +67,20 @@ class App extends Component {
                   <Food
                     {...routeProps}
                     updateCalorieCount={this.updateCalorieCount}
+                    saveFood={this.saveFood}
                   />
                 )}
               />
-              <Route path="/create-new-food" component={NewFood} />
               <Route
                 path="/add-exercise"
                 render={routeProps => (
                   <Exercise
                     {...routeProps}
                     updateCalorieCount={this.updateCalorieCount}
+                    saveExercise={this.saveExercise}
                   />
                 )}
               />
-              <Route path="/create-new-exercise" component={NewExercise} />
               <Route path="/goals" component={Goals} />
               <Route path="/view-macros" component={ViewMacros} />
             </Switch>

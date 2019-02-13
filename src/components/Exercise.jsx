@@ -10,15 +10,22 @@ class Exercise extends Component {
     super(props);
 
     this.state = {
-      calorieAmount: 0
+      calorieAmount: 0,
+      name: ""
     };
 
     this.updateLocalCalories = this.updateLocalCalories.bind(this);
     this.submitQuickAmountExercise = this.submitQuickAmountExercise.bind(this);
+    this.saveExerciseLocally = this.saveExerciseLocally.bind(this);
+    this.updateName = this.updateName.bind(this);
   }
 
   updateLocalCalories(event) {
     this.setState({ calorieAmount: event.target.value });
+  }
+
+  updateName(event) {
+    this.setState({ name: event.target.value });
   }
 
   submitQuickAmountExercise(event) {
@@ -27,6 +34,20 @@ class Exercise extends Component {
     this.setState({ calorieAmount: 0 });
   }
 
+  saveExerciseLocally(event) {
+    event.preventDefault();
+    this.props.saveExercise({
+      calorieAmount: this.state.calorieAmount,
+      name: this.state.name
+    });
+  }
+
+  submitAndSaveExercise(event) {
+    this.saveExerciseLocally(event);
+    this.submitAndSaveExercise(event);
+  }
+
+  /** We can probably abstract the quickadd forms */
   render() {
     return (
       <div className="exercise">
@@ -51,10 +72,25 @@ class Exercise extends Component {
           </div>
           <div>
             <label htmlFor="name">Optional Name</label>
-            <input id="name" type="text" placeholder="Name" />
+            <input
+              id="name"
+              type="text"
+              placeholder="Name"
+              value={this.state.name}
+              onChange={this.updateName}
+            />
           </div>
           <div>
-            <input type="submit" value="Submit and Save as New" />
+            <input
+              type="submit"
+              value="Submit and Save as New Exercise"
+              onClick={this.submitAndSaveExercise}
+            />
+            <input
+              type="submit"
+              value="Save as New Exercise Only"
+              onClick={this.saveExerciseLocally}
+            />
           </div>
         </form>
         <div className="action-button">
@@ -62,11 +98,7 @@ class Exercise extends Component {
             <button>Use Saved Exercise</button>
           </Link>
         </div>
-        <div className="action-button">
-          <Link to="create-new-exercise">
-            <button>Create New Execise</button>
-          </Link>
-        </div>
+        <div className="saved-items">List saved items here</div>
       </div>
     );
   }
