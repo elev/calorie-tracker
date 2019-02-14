@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Button from "@material-ui/core/Button";
 
 class Main extends Component {
   render() {
@@ -7,24 +8,44 @@ class Main extends Component {
       <div className="main">
         <div className="content">
           <div className="action-button">
-            <Link to="add-food">
-              <button>Add Food</button>
-            </Link>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="add-food"
+            >
+              Add Food
+            </Button>
           </div>
           <div className="action-button">
-            <Link to="add-exercise">
-              <button>Add Exercise</button>
-            </Link>
+            <Button
+              variant="contained"
+              color="primary"
+              component={Link}
+              to="add-exercise"
+            >
+              Add Exercise
+            </Button>
           </div>
           <div className="action-button">
-            <Link to="view-macros">
-              <button>View Macros</button>
-            </Link>
+            <Button
+              component={Link}
+              color="primary"
+              variant="contained"
+              to="view-macros"
+            >
+              View Macros
+            </Button>
           </div>
           <div className="action-button">
-            <Link to="goals">
-              <button>Update Goals</button>
-            </Link>
+            <Button
+              component={Link}
+              color="primary"
+              variant="contained"
+              to="goals"
+            >
+              Update Goals
+            </Button>
           </div>
         </div>
       </div>
