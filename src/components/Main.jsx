@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import MenuItem from "@material-ui/core/MenuItem";
+import MenuList from "@material-ui/core/MenuList";
+import { withStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
 class Main extends Component {
@@ -7,46 +10,20 @@ class Main extends Component {
     return (
       <div className="main">
         <div className="content">
-          <div className="action-button">
-            <Button
-              variant="contained"
-              color="primary"
-              component={Link}
-              to="add-food"
-            >
+          <MenuList>
+            <MenuItem component={Link} to="add-food">
               Add Food
-            </Button>
-          </div>
-          <div className="action-button">
-            <Button
-              variant="contained"
-              color="primary"
-              component={Link}
-              to="add-exercise"
-            >
+            </MenuItem>
+            <MenuItem component={Link} to="add-exercise">
               Add Exercise
-            </Button>
-          </div>
-          <div className="action-button">
-            <Button
-              component={Link}
-              color="primary"
-              variant="contained"
-              to="view-macros"
-            >
+            </MenuItem>
+            <MenuItem component={Link} to="view-macros">
               View Macros
-            </Button>
-          </div>
-          <div className="action-button">
-            <Button
-              component={Link}
-              color="primary"
-              variant="contained"
-              to="goals"
-            >
+            </MenuItem>
+            <MenuItem component={Link} to="goals">
               Update Goals
-            </Button>
-          </div>
+            </MenuItem>
+          </MenuList>
         </div>
       </div>
     );
