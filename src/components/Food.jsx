@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 class Food extends Component {
   constructor(props) {
@@ -26,24 +28,25 @@ class Food extends Component {
   render() {
     return (
       <div className="food">
-        {/* Todo, break form elements out into individual components? */}
         <form>
-          <label htmlFor="calories">
-            Calories:
-            <input
-              id="calories"
-              type="number"
-              pattern="[0-9]*"
-              placeholder="Calories"
-              onChange={this.updateCalories}
-              value={this.state.calorieAmount}
-            />
-          </label>
-          <input
-            type="submit"
+          <TextField
+            required
+            id="calories"
+            label="calories"
+            type="number"
+            name="calories"
+            margin="normal"
+            variant="outlined"
+          />
+          <Button
+            size="large"
             onClick={this.submitQuickAmount}
             value="Submit Quick Amount"
-          />
+            variant="contained"
+            color="primary"
+          >
+            Submit Quick Amount
+          </Button>
 
           <div className="optional-name">
             <input id="name" type="text" placeholder="Name" />

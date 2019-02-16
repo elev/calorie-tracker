@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Grid from "@material-ui/core/Grid";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 /**
  * This repeates a lot of the code from foot
@@ -52,24 +55,34 @@ class Exercise extends Component {
     return (
       <div className="exercise">
         <form>
-          <div>
-            <label htmlFor="calories">Calories Burned: </label>
-            <input
-              id="calories"
-              type="number"
-              pattern="[0-9]*"
-              placeholder="Calories"
-              onChange={this.updateLocalCalories}
-              value={this.state.calorieAmount}
-            />
-          </div>
-          <div>
-            <input
-              type="submit"
-              value="Submit Quick Amount"
-              onClick={this.submitQuickAmountExercise}
-            />
-          </div>
+          <Grid container spacing={16}>
+            <Grid item xs={4}>
+              <TextField
+                required
+                id="calories"
+                label="calories"
+                type="number"
+                pattern="[0-9]*"
+                name="calories"
+                margin="normal"
+                variant="outlined"
+                onChange={this.updateLocalCalories}
+                value={this.state.calorieAmount}
+              />
+            </Grid>
+            <Grid item>
+              <Button
+                size="large"
+                onClick={this.submitQuickAmountExercise}
+                value="Submit Quick Amount"
+                variant="contained"
+                color="primary"
+              >
+                Quick Add
+              </Button>
+            </Grid>
+          </Grid>
+
           <div>
             <label htmlFor="name">Optional Name</label>
             <input
