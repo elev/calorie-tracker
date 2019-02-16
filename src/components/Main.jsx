@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuList from "@material-ui/core/MenuList";
 import { withStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 
 class Main extends Component {
   render() {
