@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 
 class Food extends Component {
   constructor(props) {
@@ -29,58 +30,103 @@ class Food extends Component {
     return (
       <div className="food">
         <form>
-          <TextField
-            required
-            id="calories"
-            label="calories"
-            type="number"
-            name="calories"
-            margin="normal"
-            variant="outlined"
-          />
+          <div>
+            <TextField
+              required
+              id="calories"
+              label="calories"
+              type="number"
+              name="calories"
+              margin="normal"
+              variant="outlined"
+              onChange={this.updateLocalCalories}
+            />
+          </div>
+          <div>
+            <Button
+              size="large"
+              onClick={this.submitQuickAmount}
+              value="Submit Quick Amount"
+              variant="contained"
+              color="primary"
+            >
+              Submit Quick Amount
+            </Button>
+          </div>
+          <div className="save-for-later-options">
+            <Typography variant="h6">Save for later options</Typography>
+            <div className="optional-name">
+              <TextField
+                id="name"
+                label="name"
+                type="text"
+                name="name"
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
+            <div>
+              <TextField
+                id="protein"
+                label="protein"
+                type="number"
+                name="protein"
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
+            <div>
+              <TextField
+                id="carbs"
+                label="carbs"
+                type="text"
+                name="carbs"
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
+            <div>
+              <TextField
+                id="fat"
+                label="fat"
+                type="text"
+                name="fat"
+                margin="normal"
+                variant="outlined"
+              />
+            </div>
+            <div>
+              <Button
+                size="large"
+                value="Submit and Save as New"
+                variant="contained"
+                color="primary"
+              >
+                Submit and Save as New
+              </Button>
+            </div>
+            <div>
+              <Button
+                size="large"
+                value="Save as New Only"
+                variant="contained"
+                color="primary"
+              >
+                Save as New Only
+              </Button>
+            </div>
+          </div>
+        </form>
+
+        <div className="use-saved">
           <Button
             size="large"
-            onClick={this.submitQuickAmount}
-            value="Submit Quick Amount"
+            value="Use Saved Food"
             variant="contained"
             color="primary"
           >
-            Submit Quick Amount
+            Use Saved Food
           </Button>
-
-          <div className="optional-name">
-            <input id="name" type="text" placeholder="Name" />
-          </div>
-
-          <div className="optional-macros">
-            <h2>Optional Macros Consumed</h2>
-          </div>
-          <div>
-            <label htmlFor="protein">
-              Protein:
-              <input id="protein" type="text" placeholder="Protein" />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="carbs">
-              Carbs:
-              <input id="carbs" type="text" placeholder="Carbs" />
-            </label>
-          </div>
-          <div>
-            <label htmlFor="fat">
-              Fat:
-              <input id="fat" type="text" placeholder="Fat" />
-            </label>
-          </div>
-          <input type="submit" value="Submit and Save as New Food" />
-          <input type="submit" value="Save as New Food Only" />
-        </form>
-
-        <div className="action-button">
-          <Link to="use-saved-food">
-            <button type="button">Use Saved Food</button>
-          </Link>
         </div>
         <div className="saved-items">List saved items here</div>
       </div>

@@ -55,55 +55,67 @@ class Exercise extends Component {
     return (
       <div className="exercise">
         <form>
-          <Grid container spacing={16}>
-            <Grid item xs={4}>
-              <TextField
-                required
-                id="calories"
-                label="calories"
-                type="number"
-                pattern="[0-9]*"
-                name="calories"
-                margin="normal"
-                variant="outlined"
-                onChange={this.updateLocalCalories}
-                value={this.state.calorieAmount}
-              />
-            </Grid>
-            <Grid item>
-              <Button
-                size="large"
-                onClick={this.submitQuickAmountExercise}
-                value="Submit Quick Amount"
-                variant="contained"
-                color="primary"
-              >
-                Quick Add
-              </Button>
-            </Grid>
-          </Grid>
+          <div>
+            <TextField
+              required
+              id="calories"
+              label="calories"
+              type="number"
+              pattern="[0-9]*"
+              name="calories"
+              margin="normal"
+              variant="outlined"
+              onChange={this.updateLocalCalories}
+              value={this.state.calorieAmount}
+            />
+          </div>
+          <div>
+            <Button
+              size="large"
+              onClick={this.submitQuickAmountExercise}
+              value="Submit Quick Amount"
+              variant="contained"
+              color="primary"
+            >
+              Quick Add
+            </Button>
+          </div>
 
           <div>
-            <label htmlFor="name">Optional Name</label>
-            <input
+            <TextField
               id="name"
+              label="name"
               type="text"
-              placeholder="Name"
+              name="Name"
+              margin="normal"
+              variant="outlined"
               value={this.state.name}
               onChange={this.updateName}
             />
           </div>
           <div>
-            <input
+            <Button
+              size="large"
               type="submit"
               value="Submit and Save as New Exercise"
               onClick={this.submitAndSaveExercise}
-            />
-            <input
+              variant="contained"
+              color="primary"
+            >
+              Submit and Save
+            </Button>
+          </div>
+          <div>
+            <Button
+              size="large"
               type="submit"
               value="Save as New Exercise Only"
               onClick={this.saveExerciseLocally}
-            />
+              variant="contained"
+              color="primary"
+            >
+              Save Only
+            </Button>
           </div>
         </form>
         <div className="action-button">
