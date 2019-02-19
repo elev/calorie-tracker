@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -9,19 +10,33 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
+const styles = theme => ({
+  heading: {
+    backgroundColor: "red",
+    marginBottom: theme.spacing.unit * 10
+  }
+});
+
 class Header extends Component {
   computeCaloriesLeft() {
     return this.props.dailyGoal - this.props.calorieCount;
   }
 
   render() {
+    const { classes } = this.props;
+
     let caloriesLeft = this.computeCaloriesLeft();
 
     return (
       <div className="header">
         <AppBar position="static" color="default">
           <Toolbar>
-            <Typography variant="h4" component={Link} to="/">
+            <Typography
+              className={classes.heading}
+              variant="h4"
+              component={Link}
+              to="/"
+            >
               Calorie Tracker
             </Typography>
           </Toolbar>
@@ -48,4 +63,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default withStyles(styles)(Header);
