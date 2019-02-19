@@ -1,8 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { makeStyles } from "@material-ui/styles";
+
+const cssClasses = makeStyles => ({
+  section: {
+    marginBottom: "16px"
+  }
+});
 
 class Food extends Component {
   constructor(props) {
@@ -30,29 +36,31 @@ class Food extends Component {
     return (
       <div className="food">
         <form>
-          <div>
-            <TextField
-              required
-              id="calories"
-              label="calories"
-              type="number"
-              name="calories"
-              margin="normal"
-              variant="outlined"
-              onChange={this.updateLocalCalories}
-            />
-          </div>
-          <div>
-            <Button
-              size="large"
-              onClick={this.submitQuickAmount}
-              value="Submit Quick Amount"
-              variant="contained"
-              color="primary"
-            >
-              Submit Quick Amount
-            </Button>
-          </div>
+          <section className={cssClasses.section}>
+            <div>
+              <TextField
+                required
+                id="calories"
+                label="calories"
+                type="number"
+                name="calories"
+                margin="normal"
+                variant="outlined"
+                onChange={this.updateLocalCalories}
+              />
+            </div>
+            <div>
+              <Button
+                size="large"
+                onClick={this.submitQuickAmount}
+                value="Submit Quick Amount"
+                variant="contained"
+                color="primary"
+              >
+                Submit Quick Amount
+              </Button>
+            </div>
+          </section>
           <div className="save-for-later-options">
             <Typography variant="h6">Save for later options</Typography>
             <div className="optional-name">
