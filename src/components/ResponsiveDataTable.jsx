@@ -4,9 +4,12 @@ import { withStyles } from "@material-ui/core/styles";
 const styles = theme => ({
   unit: {
     display: "block",
+    "font-family": theme.typography.fontFamily,
+    color: theme.palette.text.secondary,
 
     [theme.breakpoints.up("md")]: {
-      display: "inline-block"
+      display: "inline-block",
+      padding: theme.spacing.unit * 2
     }
   },
 
@@ -41,7 +44,7 @@ const ResponsiveDataTable = props => {
         <div className={classes.value}>{props.calorieCount}</div>
       </div>
       <div className={classes.unit}>
-        <div className={classes.heading}>Amount Left</div>
+        <div className={classes.heading}>Remaining</div>
         <div className={classes.value}>{props.caloriesLeft}</div>
       </div>
     </div>
