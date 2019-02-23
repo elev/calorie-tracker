@@ -6,6 +6,14 @@ import Food from "./Food";
 import Exercise from "./Exercise";
 import Goals from "./Goals";
 import ViewMacros from "./ViewMacros";
+import { withStyles } from "@material-ui/core/styles";
+
+const styles = theme => ({
+  main: {
+    "max-width": "400px",
+    margin: "0 auto"
+  }
+});
 
 class Main extends Component {
   constructor(props) {
@@ -16,7 +24,6 @@ class Main extends Component {
       foods: [],
       exercises: []
     };
-
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
     this.saveFood = this.saveFood.bind(this);
     this.saveExercise = this.saveExercise.bind(this);
@@ -39,11 +46,10 @@ class Main extends Component {
       food: [...this.state.food, food]
     });
   }
-
   render() {
     return (
       <BrowserRouter>
-        <div>
+        <div className={this.props.classes.main}>
           <Header
             calorieCount={this.state.calorieCount}
             dailyGoal={this.state.dailyGoal}
@@ -79,4 +85,4 @@ class Main extends Component {
   }
 }
 
-export default Main;
+export default withStyles(styles)(Main);
