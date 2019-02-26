@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 
 class Goals extends Component {
   render() {
@@ -7,22 +9,69 @@ class Goals extends Component {
         <form>
           <h2>Daily Food Goals</h2>
           <div>
-            <label htmlFor="calories">Daily Calorie Goals</label>
-            <input id="calories" type="text" placeholder="Calories" />
+            <div>
+              <TextField
+                required
+                id="calories"
+                label="calories"
+                type="number"
+                pattern="[0-9]*"
+                name="calories"
+                margin="normal"
+                variant="outlined"
+                fullWidth="true"
+              />
+            </div>
           </div>
           <div className="optional-goals">
-            <h2>Optional Macro Goals</h2>
+            <h2>Macros</h2>
+            <div>
+              <TextField
+                id="protein"
+                label="protein"
+                type="number"
+                pattern="[0-9]*"
+                name="protein"
+                margin="normal"
+                variant="outlined"
+                fullWidth="true"
+              />
+            </div>
+            <div>
+              <TextField
+                id="carbs"
+                label="carbs"
+                type="number"
+                pattern="[0-9]*"
+                name="carbs"
+                margin="normal"
+                variant="outlined"
+                fullWidth="true"
+              />
+            </div>
 
-            <label htmlFor="protein">Protein</label>
-            <input id="protein" type="text" placeholder="Protein" />
-
-            <label htmlFor="carbs">Carbs</label>
-            <input id="carbs" type="text" placeholder="Carbs" />
-
-            <label htmlFor="fat">Fat</label>
-            <input id="fat" type="text" placeholder="Fat" />
+            <div>
+              <TextField
+                id="fat"
+                label="fat"
+                type="number"
+                pattern="[0-9]*"
+                name="fat"
+                margin="normal"
+                variant="outlined"
+                fullWidth="true"
+              />
+            </div>
           </div>
-          <input type="submit" value="Submit" />
+          <Button
+            size="large"
+            value="Submit Quick Amount"
+            variant="contained"
+            color="primary"
+            fullWidth="true"
+          >
+            Submit
+          </Button>
         </form>
       </div>
     );
