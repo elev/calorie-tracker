@@ -1,3 +1,21 @@
+# Calorie count app
+*because we dont like the bloat of of other ones*
+
+## TODO
+* Update exercises to match food, cleanup
+* Build macro tracking page
+* Build save food and save exercise
+* Reiterate and see if anything else needs to be completed
+* build tests
+* use prop types or flow or typescript, research as to the best ones
+* Set up CI
+* Get this badboy live, even if it's just a free heroku
+
+
+
+
+
+# Base Create React App Notes
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

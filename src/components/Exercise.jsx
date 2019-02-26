@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
+import { withStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 
-/**
- * This repeates a lot of the code from foot
- * Currently erring on repetition over the wrong abstraction
- */
+const styles = theme => ({
+  section: {
+    margin: theme.spacing.unit * 2
+  }
+});
+
 class Exercise extends Component {
   constructor(props) {
     super(props);
@@ -54,79 +55,43 @@ class Exercise extends Component {
   render() {
     return (
       <div className="exercise">
-        <form>
-          <div>
-            <TextField
-              required
-              id="calories"
-              label="calories"
-              type="number"
-              pattern="[0-9]*"
-              name="calories"
-              margin="normal"
-              variant="outlined"
-              onChange={this.updateLocalCalories}
-              value={this.state.calorieAmount}
-            />
-          </div>
-          <div>
-            <Button
-              size="large"
-              onClick={this.submitQuickAmountExercise}
-              value="Submit Quick Amount"
-              variant="contained"
-              color="primary"
-            >
-              Quick Add
-            </Button>
-          </div>
-
-          <div>
-            <TextField
-              id="name"
-              label="name"
-              type="text"
-              name="Name"
-              margin="normal"
-              variant="outlined"
-              value={this.state.name}
-              onChange={this.updateName}
-            />
-          </div>
-          <div>
-            <Button
-              size="large"
-              type="submit"
-              value="Submit and Save as New Exercise"
-              onClick={this.submitAndSaveExercise}
-              variant="contained"
-              color="primary"
-            >
-              Submit and Save
-            </Button>
-          </div>
-          <div>
-            <Button
-              size="large"
-              type="submit"
-              value="Save as New Exercise Only"
-              onClick={this.saveExerciseLocally}
-              variant="contained"
-              color="primary"
-            >
-              Save Only
-            </Button>
-          </div>
-        </form>
-        <div className="action-button">
-          <Link to="use-saved-execise">
-            <button>Use Saved Exercise</button>
-          </Link>
-        </div>
-        <div className="saved-items">List saved items here</div>
+        <section className={this.props.classes.section}>
+          <form>
+            <div>
+              <TextField
+                required
+                id="calories"
+                label="calories"
+                type="number"
+                pattern="[0-9]*"
+                name="calories"
+                margin="normal"
+                variant="outlined"
+                onChange={this.updateLocalCalories}
+                value={this.state.calorieAmount}
+                fullWidth="true"
+              />
+            </div>
+            <div>
+              <Button
+                size="large"
+                onClick={this.submitQuickAmountExercise}
+                value="Submit Quick Amount"
+                variant="contained"
+                color="primary"
+                fullWidth="true"
+              >
+                Submit
+              </Button>
+            </div>
+          </form>
+        </section>
+        <section>
+          <div className="saved-items">List saved items here</div>
+        </section>
       </div>
     );
   }
 }
 
-export default Exercise;
+export default withStyles(styles)(Exercise);
