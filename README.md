@@ -2,15 +2,17 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
-* Update exercises to match food, cleanup
 * Build macro tracking page
+* Maybe change the click event on the submit button to be a form submit action?
 * Build save food and save exercise
+* Daily reset at midnight? or button to "start new day"
 * Reiterate and see if anything else needs to be completed
 * build tests
 * use prop types or flow or typescript, research as to the best ones
 * Set up CI
 * Get this badboy live, even if it's just a free heroku
-
+* Phase 2// weekly or monthly goals?
+* Maybe TDEE Calculator? https://www.surroundedbymath.com/interactive-math/tdee/
 
 
 

@@ -22,7 +22,15 @@ class Main extends Component {
       calorieCount: 0,
       dailyGoal: 1800, // change this to not be magic later.
       foods: [],
-      exercises: []
+      exercises: [],
+      macros: {
+        protein: 0,
+        fat: 0,
+        carbs: 0,
+        proteinGoal: 0,
+        fatGoal: 0,
+        carbGoal: 0
+      }
     };
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
     this.saveFood = this.saveFood.bind(this);
@@ -77,7 +85,12 @@ class Main extends Component {
               )}
             />
             <Route path="/goals" component={Goals} />
-            <Route path="/view-macros" component={ViewMacros} />
+            <Route
+              path="/view-macros"
+              render={routeProps => (
+                <ViewMacros {...routeProps} macros={this.state.macros} />
+              )}
+            />
           </Switch>
         </div>
       </BrowserRouter>
