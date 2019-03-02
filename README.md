@@ -2,8 +2,10 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
-* Build macro tracking page
+* See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
+* Let goals page update the various goals, set || for defaults.
 * Maybe change the click event on the submit button to be a form submit action?
+* Make screen and buttons look good. Gradients -- https://cssgradient.io/
 * Build save food and save exercise
 * Daily reset at midnight? or button to "start new day"
 * Reiterate and see if anything else needs to be completed

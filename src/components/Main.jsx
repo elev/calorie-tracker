@@ -35,6 +35,7 @@ class Main extends Component {
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
     this.saveFood = this.saveFood.bind(this);
     this.saveExercise = this.saveExercise.bind(this);
+    this.updateGoals = this.updateGoals.bind(this);
   }
 
   updateCalorieCount(amount) {
@@ -54,6 +55,14 @@ class Main extends Component {
       food: [...this.state.food, food]
     });
   }
+
+  updateGoals(macros, dailyGoal) {
+    this.setState({
+      macros: macros,
+      dailyGoal: dailyGoal
+    });
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -88,7 +97,12 @@ class Main extends Component {
             <Route
               path="/view-macros"
               render={routeProps => (
-                <ViewMacros {...routeProps} macros={this.state.macros} />
+                <ViewMacros
+                  {...routeProps}
+                  macros={this.state.macros}
+                  updateGoals={this.updateGoals}
+                  dailyGoal={this.state.dailyGoal}
+                />
               )}
             />
           </Switch>
