@@ -107,12 +107,7 @@ class Main extends Component {
             <Route
               path="/view-macros"
               render={routeProps => (
-                <ViewMacros
-                  {...routeProps}
-                  macros={this.state.macros}
-                  updateGoals={this.updateGoals}
-                  dailyGoal={this.state.dailyGoal}
-                />
+                <ViewMacros {...routeProps} macros={this.state.macros} />
               )}
             />
           </Switch>

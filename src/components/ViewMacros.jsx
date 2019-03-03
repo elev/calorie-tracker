@@ -23,13 +23,13 @@ const ViewMacros = props => {
           </ListItemText>
         </ListItem>
         <ListItem>
-          <ListItemText> Fat Goal: </ListItemText>{" "}
+          <ListItemText> Fat Goal: </ListItemText>
           <ListItemText className={props.classes["align-right"]}>
             {props.macros.fatGoal}
           </ListItemText>
         </ListItem>
         <ListItem>
-          <ListItemText> Carb Goal: </ListItemText>{" "}
+          <ListItemText> Carb Goal: </ListItemText>
           <ListItemText className={props.classes["align-right"]}>
             {props.macros.carbGoal}
           </ListItemText>

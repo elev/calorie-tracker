@@ -12,9 +12,9 @@ class Goals extends Component {
     this.state = {
       localDailyGoal: this.props.defaultDailyGoal,
       localMacroGoals: {
-        protein: this.props.defaultMacros.protein,
-        fat: this.props.defaultMacros.fat,
-        carbs: this.props.defaultMacros.carbs
+        proteinGoal: this.props.defaultMacros.proteinGoal,
+        fatGoal: this.props.defaultMacros.fatGoal,
+        carbGoal: this.props.defaultMacros.carbGoal
       }
     };
   }
@@ -66,12 +66,12 @@ class Goals extends Component {
                 label="protein"
                 type="number"
                 pattern="[0-9]*"
-                name="protein"
+                name="proteinGoal"
                 margin="normal"
                 variant="outlined"
                 fullWidth
                 onChange={this.changeMacros}
-                value={this.state.localMacroGoals.protein}
+                value={this.state.localMacroGoals.proteinGoal}
               />
             </div>
             <div>
@@ -80,12 +80,12 @@ class Goals extends Component {
                 label="carbs"
                 type="number"
                 pattern="[0-9]*"
-                name="carbs"
+                name="carbGoal"
                 margin="normal"
                 variant="outlined"
                 fullWidth
                 onChange={this.changeMacros}
-                value={this.state.localMacroGoals.carbs}
+                value={this.state.localMacroGoals.carbGoal}
               />
             </div>
 
@@ -95,12 +95,12 @@ class Goals extends Component {
                 label="fat"
                 type="number"
                 pattern="[0-9]*"
-                name="fat"
+                name="fatGoal"
                 margin="normal"
                 variant="outlined"
                 fullWidth
                 onChange={this.changeMacros}
-                value={this.state.localMacroGoals.fat}
+                value={this.state.localMacroGoals.fatGoal}
               />
             </div>
           </div>
