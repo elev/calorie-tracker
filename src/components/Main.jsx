@@ -20,7 +20,7 @@ class Main extends Component {
     super(props);
     this.state = {
       calorieCount: 0,
-      dailyGoal: 1800, // change this to not be magic later.
+      dailyGoal: 2000,
       foods: [],
       exercises: [],
       macros: {
@@ -93,7 +93,17 @@ class Main extends Component {
                 />
               )}
             />
-            <Route path="/goals" component={Goals} />
+            <Route
+              path="/goals"
+              render={routeProps => (
+                <Goals
+                  {...routeProps}
+                  defaultMacros={this.state.macros}
+                  updateGoals={this.updateGoals}
+                  defaultDailyGoal={this.state.dailyGoal}
+                />
+              )}
+            />
             <Route
               path="/view-macros"
               render={routeProps => (

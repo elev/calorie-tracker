@@ -61,6 +61,7 @@ class Header extends Component {
         <ResponsiveDataTable
           calorieCount={this.props.calorieCount}
           caloriesLeft={caloriesLeft}
+          dailyGoal={this.props.dailyGoal}
         />
         <Drawer
           anchor="top"

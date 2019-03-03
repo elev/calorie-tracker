@@ -37,7 +37,7 @@ const ResponsiveDataTable = props => {
     <div>
       <div className={classes.unit}>
         <div className={classes.heading}>Goal</div>
-        <div className={classes.value}>1800</div>
+        <div className={classes.value}>{props.dailyGoal}</div>
       </div>
       <div className={classes.unit}>
         <div className={classes.heading}>Consumed</div>

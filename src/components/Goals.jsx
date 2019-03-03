@@ -5,22 +5,26 @@ import Button from "@material-ui/core/Button";
 class Goals extends Component {
   constructor(props) {
     super(props);
-    this.updateLocalGoals = this.updateLocalGoals.bind(this);
+    this.sendUpdatedGoals = this.sendUpdatedGoals.bind(this);
     this.changeMacros = this.changeMacros.bind(this);
+    this.changeDailyGoal = this.changeDailyGoal.bind(this);
 
     this.state = {
-      localDailyGoal: 0,
+      localDailyGoal: this.props.defaultDailyGoal,
       localMacroGoals: {
-        protein: 0,
-        fat: 0,
-        carb: 0
+        protein: this.props.defaultMacros.protein,
+        fat: this.props.defaultMacros.fat,
+        carbs: this.props.defaultMacros.carbs
       }
     };
   }
 
-  updateLocalGoals(event) {
+  sendUpdatedGoals(event) {
     event.preventDefault();
-    debugger;
+    this.props.updateGoals(
+      this.state.localMacroGoals,
+      this.state.localDailyGoal
+    );
   }
 
   changeMacros(event) {
@@ -29,11 +33,15 @@ class Goals extends Component {
     this.setState({ localMacroGoals: macros });
   }
 
+  changeDailyGoal(event) {
+    this.setState({ localDailyGoal: event.target.value });
+  }
+
   render() {
     return (
       <div className="goals">
-        <form onSubmit={this.updateLocalGoals}>
-          <h2>Daily Food Goals</h2>
+        <form onSubmit={this.sendUpdatedGoals}>
+          <h2>Daily Goals</h2>
           <div>
             <div>
               <TextField
@@ -45,12 +53,13 @@ class Goals extends Component {
                 name="calories"
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
+                fullWidth
+                onChange={this.changeDailyGoal}
+                value={this.state.localDailyGoal}
               />
             </div>
           </div>
           <div className="optional-goals">
-            <h2>Macros</h2>
             <div>
               <TextField
                 id="protein"
@@ -60,9 +69,9 @@ class Goals extends Component {
                 name="protein"
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
+                fullWidth
                 onChange={this.changeMacros}
-                value={this.props.protein}
+                value={this.state.localMacroGoals.protein}
               />
             </div>
             <div>
@@ -74,8 +83,9 @@ class Goals extends Component {
                 name="carbs"
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
+                fullWidth
                 onChange={this.changeMacros}
+                value={this.state.localMacroGoals.carbs}
               />
             </div>
 
@@ -88,8 +98,9 @@ class Goals extends Component {
                 name="fat"
                 margin="normal"
                 variant="outlined"
-                fullWidth="true"
+                fullWidth
                 onChange={this.changeMacros}
+                value={this.state.localMacroGoals.fat}
               />
             </div>
           </div>
@@ -98,9 +109,8 @@ class Goals extends Component {
             value="Submit Quick Amount"
             variant="contained"
             color="primary"
-            fullWidth="true"
+            fullWidth
             type="submit"
-            primary={true}
             onChange={this.changeMacros}
           >
             Submit
