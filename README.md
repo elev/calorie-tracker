@@ -2,6 +2,8 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
+* work with food updating the macros, and respect the macro goals.
+** We may need to write tests to make this easier.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
 * Let goals page update the various goals, set || for defaults.
 * Maybe change the click event on the submit button to be a form submit action?
