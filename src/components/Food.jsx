@@ -15,11 +15,17 @@ class Food extends Component {
     super(props);
 
     this.state = {
-      calorieAmount: 0
+      calorieAmount: 0,
+      macros: {
+        protein: 0,
+        fat: 0,
+        carbs: 0
+      }
     };
 
     this.updateLocalCalories = this.updateLocalCalories.bind(this);
     this.submitFood = this.submitFood.bind(this);
+    this.changeMacros = this.changeMacros.bind(this);
   }
 
   updateLocalCalories(event) {
@@ -28,8 +34,20 @@ class Food extends Component {
 
   submitFood(event) {
     event.preventDefault();
-    this.props.updateCalorieCount(parseInt(this.state.calorieAmount));
-    this.setState({ calorieAmount: 0 });
+    this.props.updateCalorieCount(
+      parseInt(this.state.calorieAmount),
+      this.state.macros
+    );
+    this.setState({
+      calorieAmount: 0,
+      macros: { protein: 0, fat: 0, carbs: 0 }
+    });
+  }
+
+  changeMacros(event) {
+    let macros = Object.assign({}, this.state.macros);
+    macros[event.target.name] = event.target.value;
+    this.setState({ macros });
   }
 
   render() {
@@ -63,6 +81,8 @@ class Food extends Component {
                   margin="normal"
                   variant="outlined"
                   fullWidth="true"
+                  onChange={this.changeMacros}
+                  value={this.state.macros.protein}
                 />
               </div>
               <div>
@@ -74,6 +94,8 @@ class Food extends Component {
                   margin="normal"
                   variant="outlined"
                   fullWidth="true"
+                  onChange={this.changeMacros}
+                  value={this.state.macros.carbs}
                 />
               </div>
               <div>
@@ -85,6 +107,8 @@ class Food extends Component {
                   margin="normal"
                   variant="outlined"
                   fullWidth="true"
+                  onChange={this.changeMacros}
+                  value={this.state.macros.fat}
                 />
               </div>
             </div>

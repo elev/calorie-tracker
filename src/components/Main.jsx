@@ -38,9 +38,12 @@ class Main extends Component {
     this.updateGoals = this.updateGoals.bind(this);
   }
 
-  updateCalorieCount(amount) {
+  updateCalorieCount(amount, newMacros) {
+    let macros = Object.assign({}, this.state.macros, newMacros);
+
     this.setState({
-      calorieCount: this.state.calorieCount + amount
+      calorieCount: this.state.calorieCount + amount,
+      macros
     });
   }
 
@@ -79,7 +82,6 @@ class Main extends Component {
                 <Food
                   {...routeProps}
                   updateCalorieCount={this.updateCalorieCount}
-                  saveFood={this.saveFood}
                 />
               )}
             />
