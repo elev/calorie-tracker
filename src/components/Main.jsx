@@ -39,7 +39,15 @@ class Main extends Component {
   }
 
   updateCalorieCount(amount, newMacros) {
-    let macros = Object.assign({}, this.state.macros, newMacros);
+    let macros = Object.keys(this.state.macros).reduce(
+      (accumulator, currentKey) => {
+        accumulator[currentKey] =
+          parseInt(this.state.macros[currentKey]) +
+          (parseInt(newMacros[currentKey]) || 0);
+        return accumulator;
+      },
+      {}
+    );
 
     this.setState({
       calorieCount: this.state.calorieCount + amount,
@@ -60,8 +68,10 @@ class Main extends Component {
   }
 
   updateGoals(macros, dailyGoal) {
+    let newMacros = Object.assign({}, this.state.macros, macros);
+
     this.setState({
-      macros: macros,
+      macros: newMacros,
       dailyGoal: dailyGoal
     });
   }
