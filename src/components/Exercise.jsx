@@ -69,7 +69,7 @@ class Exercise extends Component {
                 variant="outlined"
                 onChange={this.updateLocalCalories}
                 value={this.state.calorieAmount}
-                fullWidth="true"
+                fullWidth
               />
             </div>
             <div>
@@ -79,7 +79,7 @@ class Exercise extends Component {
                 value="Submit Quick Amount"
                 variant="contained"
                 color="primary"
-                fullWidth="true"
+                fullWidth
               >
                 Submit
               </Button>

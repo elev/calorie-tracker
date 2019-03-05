@@ -65,7 +65,7 @@ class Food extends Component {
                 margin="normal"
                 variant="outlined"
                 onChange={this.updateLocalCalories}
-                fullWidth="true"
+                fullWidth
               />
             </div>
           </section>
@@ -80,7 +80,7 @@ class Food extends Component {
                   name="protein"
                   margin="normal"
                   variant="outlined"
-                  fullWidth="true"
+                  fullWidth
                   onChange={this.changeMacros}
                   value={this.state.macros.protein}
                 />
@@ -93,7 +93,7 @@ class Food extends Component {
                   name="carbs"
                   margin="normal"
                   variant="outlined"
-                  fullWidth="true"
+                  fullWidth
                   onChange={this.changeMacros}
                   value={this.state.macros.carbs}
                 />
@@ -106,7 +106,7 @@ class Food extends Component {
                   name="fat"
                   margin="normal"
                   variant="outlined"
-                  fullWidth="true"
+                  fullWidth
                   onChange={this.changeMacros}
                   value={this.state.macros.fat}
                 />
@@ -118,7 +118,7 @@ class Food extends Component {
               value="Submit Quick Amount"
               variant="contained"
               color="primary"
-              fullWidth="true"
+              fullWidth
             >
               Submit
             </Button>
