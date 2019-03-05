@@ -39,15 +39,14 @@ class Main extends Component {
   }
 
   updateCalorieCount(amount, newMacros) {
-    let macros = Object.keys(this.state.macros).reduce(
-      (accumulator, currentKey) => {
-        accumulator[currentKey] =
-          parseInt(this.state.macros[currentKey]) +
-          (parseInt(newMacros[currentKey]) || 0);
-        return accumulator;
-      },
-      {}
-    );
+    const addMacro = (key, oldMacros, newMacros) => {
+      return parseInt(oldMacros[key]) + (parseInt(newMacros[key]) || 0);
+    };
+
+    let macros = Object.keys(this.state.macros).reduce((accumulator, key) => {
+      accumulator[key] = addMacro(key, this.state.macros, newMacros);
+      return accumulator;
+    }, {});
 
     this.setState({
       calorieCount: this.state.calorieCount + amount,
