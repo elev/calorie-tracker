@@ -2,7 +2,8 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
-* work with food updating the macros, and respect the macro goals.
+* work with food updating the macros, and respect the macro goals. <-- DONE, but make this easier to read, maybe break off to another function
+* we need to refactor these components to make them smaller and cleaner.
 ** We may need to write tests to make this easier.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
 * Let goals page update the various goals, set || for defaults.
