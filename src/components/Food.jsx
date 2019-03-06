@@ -53,7 +53,7 @@ class Food extends Component {
   render() {
     return (
       <div className="food">
-        <form>
+        <form onSubmit={this.submitFood}>
           <section className={this.props.classes.section}>
             <div>
               <TextField
@@ -64,8 +64,9 @@ class Food extends Component {
                 name="calories"
                 margin="normal"
                 variant="outlined"
-                onChange={this.updateLocalCalories}
                 fullWidth
+                onChange={this.updateLocalCalories}
+                value={this.state.calorieAmount}
               />
             </div>
           </section>
@@ -114,10 +115,10 @@ class Food extends Component {
             </div>
             <Button
               size="large"
-              onClick={this.submitFood}
               value="Submit Quick Amount"
               variant="contained"
               color="primary"
+              type="submit"
               fullWidth
             >
               Submit

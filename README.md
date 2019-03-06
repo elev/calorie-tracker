@@ -2,6 +2,7 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
+* Add snackbars on update
 * work with food updating the macros, and respect the macro goals. <-- DONE, but make this easier to read, maybe break off to another function
 * we need to refactor these components to make them smaller and cleaner.
 ** We may need to write tests to make this easier.
