@@ -7,6 +7,7 @@ import Exercise from "./Exercise";
 import Goals from "./Goals";
 import ViewMacros from "./ViewMacros";
 import { withStyles } from "@material-ui/core/styles";
+import Snackbar from "@material-ui/core/Snackbar";
 
 const styles = theme => ({
   main: {
@@ -30,12 +31,14 @@ class Main extends Component {
         proteinGoal: 0,
         fatGoal: 0,
         carbGoal: 0
-      }
+      },
+      addedFoodOpen: false
     };
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
     this.saveFood = this.saveFood.bind(this);
     this.saveExercise = this.saveExercise.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
+    this.addedFoodClose = this.addedFoodClose.bind(this);
   }
 
   updateCalorieCount(amount, newMacros) {
@@ -56,8 +59,13 @@ class Main extends Component {
 
     this.setState({
       calorieCount: this.state.calorieCount + amount,
-      macros
+      macros,
+      addedFoodOpen: true
     });
+  }
+
+  addedFoodClose() {
+    this.setState({ addedFoodOpen: false });
   }
 
   saveExercise(exercise) {
@@ -85,6 +93,17 @@ class Main extends Component {
     return (
       <BrowserRouter>
         <div className={this.props.classes.main}>
+          <Snackbar
+            anchorOrigin={{ vertical: "top", horizontal: "center" }}
+            open={this.state.addedFoodOpen}
+            onClose={this.addedFoodClose}
+            ContentProps={{
+              "aria-describedby": "added-food-message-id"
+            }}
+            message={
+              <span id="added-food-message-id">Daily Calories Updated</span>
+            }
+          />
           <Header
             calorieCount={this.state.calorieCount}
             dailyGoal={this.state.dailyGoal}

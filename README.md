@@ -2,7 +2,9 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
-* Add snackbars on update
+* URGENT: Fix bug when adding exercise
+* URGENT: Start writing test coverage, things are breaking because we did not do this earlier.
+* Add snackbars on update - IN PROGRESS.
 * work with food updating the macros, and respect the macro goals. <-- DONE, but make this easier to read, maybe break off to another function
 * we need to refactor these components to make them smaller and cleaner.
 ** We may need to write tests to make this easier.
