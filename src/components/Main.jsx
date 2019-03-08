@@ -41,7 +41,7 @@ class Main extends Component {
     this.addedFoodClose = this.addedFoodClose.bind(this);
   }
 
-  updateCalorieCount(amount, newMacros) {
+  updateCalorieCount(amount, newMacros = {}) {
     const addMacro = (key, oldMacros, newMacros) => {
       return parseInt(oldMacros[key]) + (parseInt(newMacros[key]) || 0);
     };
