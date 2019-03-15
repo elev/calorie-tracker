@@ -40,7 +40,7 @@ class Goals extends Component {
   render() {
     return (
       <div className="goals">
-        <form onSubmit={this.sendUpdatedGoals}>
+        <form id="updateGoals" onSubmit={this.sendUpdatedGoals}>
           <h2>Daily Goals</h2>
           <div>
             <div>

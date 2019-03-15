@@ -17,26 +17,35 @@ describe("<Main />", () => {
 
   it("updates goals", () => {
     const wrapper = mount(<Main />);
-    wrapper.find('[href="/goals"]').simulate("click", { button: 0 });
 
+    // because of decorating with JSS, the real component is wrapped
+    // in a WithStyles Object, so we must dig.
+    const componentInstance = wrapper.childAt(0).instance();
+    wrapper.find('[href="/goals"]').simulate("click", { button: 0 });
+    debugger;
     wrapper
       .find('input[name="calories"]')
       .simulate("change", { target: { value: 2050 } });
 
     wrapper
-      .find('input[name="protein"]')
+      .find('input[name="proteinGoal"]')
       .simulate("change", { target: { value: 150 } });
 
     wrapper
-      .find('input[name="carbs"]')
+      .find('input[name="carbGoal"]')
       .simulate("change", { target: { value: 450 } });
 
     wrapper
-      .find('input[name="fat"]')
+      .find('input[name="fatGoal"]')
       .simulate("change", { target: { value: 50 } });
 
-    console.log(wrapper.debug());
+    //console.log(wrapper.debug());
+    //console.log(wrapper.instance());
+    // console.log(componentInstance);
+    // console.log(componentInstance.state);
 
+    wrapper.find("form#updateGoals").simulate("submit");
+    debugger;
     // console.log(wrapper.find("#calories"));
     //  expect(wrapper.exists(".some-class")).to.equal(true); //wrapper.find("#calories").simulate("click");
   });
