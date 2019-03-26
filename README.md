@@ -2,20 +2,19 @@
 *because we dont like the bloat of of other ones*
 
 ## TODO
-* URGENT: Fix bug when adding exercise
-* URGENT: Start writing test coverage, things are breaking because we did not do this earlier.
-* Add snackbars on update - IN PROGRESS.
-* work with food updating the macros, and respect the macro goals. <-- DONE, but make this easier to read, maybe break off to another function
+
+* TESTS
+** Test all the integrations
+** goals updating main state goals √
+** Food updating the main state
+** Exercise updating the main state
+
+* Daily reset at midnight? or button to "start new day"
 * we need to refactor these components to make them smaller and cleaner.
-** We may need to write tests to make this easier.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
-* Let goals page update the various goals, set || for defaults.
-* Maybe change the click event on the submit button to be a form submit action?
 * Make screen and buttons look good. Gradients -- https://cssgradient.io/
 * Build save food and save exercise
-* Daily reset at midnight? or button to "start new day"
 * Reiterate and see if anything else needs to be completed
-* build tests
 * use prop types or flow or typescript, research as to the best ones
 * Set up CI
 * Get this badboy live, even if it's just a free heroku
