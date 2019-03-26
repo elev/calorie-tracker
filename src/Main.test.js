@@ -1,15 +1,6 @@
 import React from "react";
-// the next three lines need to go into setup file
-import Enzyme from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
 import { mount } from "enzyme";
-//
-
 import Main from "./Components/Main";
-
-// maybe move and rename this file to "integration test folder..."
-
-Enzyme.configure({ adapter: new Adapter() });
 
 describe("<Main />", () => {
   it("updates goals", () => {
