@@ -21,7 +21,7 @@ class Goals extends Component {
 
   sendUpdatedGoals(event) {
     event.preventDefault();
-    // test is breaking here.
+
     this.props.updateGoals(
       this.state.localMacroGoals,
       this.state.localDailyGoal
