@@ -46,14 +46,14 @@ class Food extends Component {
 
   changeMacros(event) {
     let macros = Object.assign({}, this.state.macros);
-    macros[event.target.name] = event.target.value;
+    macros[event.currentTarget.name] = event.target.value;
     this.setState({ macros });
   }
 
   render() {
     return (
       <div className="food">
-        <form onSubmit={this.submitFood}>
+        <form id="addFood" onSubmit={this.submitFood}>
           <section className={this.props.classes.section}>
             <div>
               <TextField

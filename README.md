@@ -9,6 +9,7 @@
 ** Food updating the main state
 ** Exercise updating the main state
 
+* Add popup for updating goals (maybe this is broken????)
 * Daily reset at midnight? or button to "start new day"
 * we need to refactor these components to make them smaller and cleaner.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
