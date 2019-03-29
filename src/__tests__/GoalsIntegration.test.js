@@ -3,7 +3,7 @@ import { mount } from "enzyme";
 import Main from "../Components/Main";
 
 describe("<Goals />", () => {
-  it("updates goals", () => {
+  it("Goals should update Main's calorie and macro goals", () => {
     const wrapper = mount(<Main />);
     const componentInstance = wrapper.childAt(0).instance();
 

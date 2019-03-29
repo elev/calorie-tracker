@@ -6,10 +6,14 @@
 * TESTS
 ** Test all the integrations
 ** goals updating main state goals √
-** Food updating the main state
-** Exercise updating the main state
+** Food updating the main state √
+** Exercise updating the main state √
 
+* check if other components aren't tests
 * Add popup for updating goals (maybe this is broken????)
+
+* write tests for the popup toast jawn
+
 * Daily reset at midnight? or button to "start new day"
 * we need to refactor these components to make them smaller and cleaner.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...

@@ -2,10 +2,8 @@ import React from "react";
 import { mount } from "enzyme";
 import Main from "../Components/Main";
 
-// we will need to update the state of MAIN
-
-describe("<Main />", () => {
-  it("updates goals", () => {
+describe("<Food />", () => {
+  it("Food should update Main's calories and macros", () => {
     const wrapper = mount(<Main />);
     const componentInstance = wrapper.childAt(0).instance();
 

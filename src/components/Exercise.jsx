@@ -56,7 +56,7 @@ class Exercise extends Component {
     return (
       <div className="exercise">
         <section className={this.props.classes.section}>
-          <form>
+          <form id="addExercise" onSubmit={this.submitQuickAmountExercise}>
             <div>
               <TextField
                 required
@@ -75,7 +75,6 @@ class Exercise extends Component {
             <div>
               <Button
                 size="large"
-                onClick={this.submitQuickAmountExercise}
                 value="Submit Quick Amount"
                 variant="contained"
                 color="primary"
