@@ -9,12 +9,29 @@
 ** Food updating the main state √
 ** Exercise updating the main state √
 
+* Daily reset at midnight?
+** install moment
+** const end = moment().endOf('day');
+** const timeout = end.diff(moment())
+** setTimeout
+** Record day, reset state....
+** Recording a day feature is not built yet.
+** This needs to be the next thing we do.
+
 * check if other components aren't tests
+* write tests for the popup toast jawn
+* write tests header count
+** update state see header count update
+* write test for view macros
+
+
 * Add popup for updating goals (maybe this is broken????)
 
-* write tests for the popup toast jawn
 
-* Daily reset at midnight? or button to "start new day"
+
+
+
+
 * we need to refactor these components to make them smaller and cleaner.
 * See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
 * Make screen and buttons look good. Gradients -- https://cssgradient.io/
