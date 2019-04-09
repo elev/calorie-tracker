@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import moment from "moment";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Landing from "./Landing";
 import Header from "./Header";
@@ -9,6 +10,7 @@ import ViewMacros from "./ViewMacros";
 import { withStyles } from "@material-ui/core/styles";
 import Snackbar from "@material-ui/core/Snackbar";
 
+// this component is a GOD class. It needs to be refactored down.
 const styles = theme => ({
   main: {
     "max-width": "400px",
@@ -39,6 +41,7 @@ class Main extends Component {
     this.saveExercise = this.saveExercise.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
     this.addedFoodClose = this.addedFoodClose.bind(this);
+    this.clearDay = this.clearDay.bind(this);
   }
 
   updateCalorieCount(amount, newMacros = {}) {
@@ -87,6 +90,21 @@ class Main extends Component {
       macros: newMacros,
       dailyGoal: dailyGoal
     });
+  }
+
+  clearDay() {
+    // clear the daily values
+    // future todo, track history of days
+    ///// we will need a database for this. or use local storage
+    ///// not concerned about that in this moment.
+  }
+
+  componentDidMount() {
+    // TODO write test for this... hmmmm erggh
+    // how to write tests for time hmm...
+    const endDay = moment().endOf("day");
+    const millisecondsUntilEndDay = endDay.diff(moment());
+    setTimeout(() => this.clearDay(), millisecondsUntilEndDay);
   }
 
   render() {
