@@ -11,6 +11,10 @@ import { withStyles } from "@material-ui/core/styles";
 import Snackbar from "@material-ui/core/Snackbar";
 
 // this component is a GOD class. It needs to be refactored down.
+// article on decomposing react components
+// https://medium.com/dailyjs/techniques-for-decomposing-react-components-e8a1081ef5da
+// this should help and should be the next TODO after we can verify this time clearing stuff working.
+
 const styles = theme => ({
   main: {
     "max-width": "400px",
