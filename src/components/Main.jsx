@@ -34,7 +34,10 @@ class Main extends Component {
         fatGoal: 0,
         carbGoal: 0
       },
-      addedFoodOpen: false
+      addedFoodOpen: false,
+      dayTimeout: 0,
+      dayEnd: 0,
+      msUntilEndDay: 0
     };
     this.updateCalorieCount = this.updateCalorieCount.bind(this);
     this.saveFood = this.saveFood.bind(this);
@@ -93,19 +96,49 @@ class Main extends Component {
   }
 
   clearDay() {
+    debugger;
     // clear the daily values
     // future todo, track history of days
     ///// we will need a database for this. or use local storage
     ///// not concerned about that in this moment.
   }
 
-  componentDidMount() {
-    // TODO write test for this... hmmmm erggh
-    // how to write tests for time hmm...
-    const endDay = moment().endOf("day");
-    const millisecondsUntilEndDay = endDay.diff(moment());
-    setTimeout(() => this.clearDay(), millisecondsUntilEndDay);
+  setEndOfDay() {
+    // todo bind
+    this.setState({
+      dayEnd: moment().endOf("day")
+    });
   }
+
+  setEndOfDayTimeout() {
+    // todo bind
+    if (!dayEnd) {
+      this.setEndOfDay();
+    }
+
+    this.setState({
+      dayTimeout: setTimeout(
+        () => this.clearDay(),
+        this.state.dayEnd.diff(moment())
+      )
+    });
+  }
+
+  clearEndOfDayTimeout() {
+    if (this.state.dayTimeout) {
+      clearTimeout(this.state.dayTimeout);
+    }
+
+    this.setState({
+      dayTimeout: 0
+    });
+  }
+
+  componentDidMount() {
+    setEndOfDay();
+  }
+
+  componentWillUnmount() {}
 
   render() {
     return (
