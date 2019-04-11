@@ -50,6 +50,7 @@ class Main extends Component {
     this.addedFoodClose = this.addedFoodClose.bind(this);
     this.clearDay = this.clearDay.bind(this);
     this.setEndOfDay = this.setEndOfDay.bind(this);
+    this.setEndOfDayTimeout = this.setEndOfDayTimeout.bind(this);
     this.clearEndOfDayTimeout = this.clearEndOfDayTimeout.bind(this);
   }
 
@@ -102,11 +103,18 @@ class Main extends Component {
   }
 
   clearDay() {
-    debugger;
     // clear the daily values
+    // Todos
     // future todo, track history of days
     ///// we will need a database for this. or use local storage
-    ///// not concerned about that in this moment.
+    this.setState({
+      calorieCount: 0,
+      macros: {
+        protein: 0,
+        fat: 0,
+        carbs: 0
+      }
+    });
   }
 
   setEndOfDay() {
@@ -116,8 +124,6 @@ class Main extends Component {
   }
 
   setEndOfDayTimeout() {
-    // todo bind
-    debugger;
     if (!this.state.dayEnd) {
       this.setEndOfDay();
     }
