@@ -49,6 +49,8 @@ class Main extends Component {
     this.updateGoals = this.updateGoals.bind(this);
     this.addedFoodClose = this.addedFoodClose.bind(this);
     this.clearDay = this.clearDay.bind(this);
+    this.setEndOfDay = this.setEndOfDay.bind(this);
+    this.clearEndOfDayTimeout = this.clearEndOfDayTimeout.bind(this);
   }
 
   updateCalorieCount(amount, newMacros = {}) {
@@ -108,7 +110,6 @@ class Main extends Component {
   }
 
   setEndOfDay() {
-    // todo bind
     this.setState({
       dayEnd: moment().endOf("day")
     });
@@ -116,7 +117,8 @@ class Main extends Component {
 
   setEndOfDayTimeout() {
     // todo bind
-    if (!dayEnd) {
+    debugger;
+    if (!this.state.dayEnd) {
       this.setEndOfDay();
     }
 
@@ -138,11 +140,13 @@ class Main extends Component {
     });
   }
 
-  componentDidMount() {
-    setEndOfDay();
+  componentWillMount() {
+    this.setEndOfDay();
   }
 
-  componentWillUnmount() {}
+  componentWillUnmount() {
+    this.clearEndOfDayTimeout();
+  }
 
   render() {
     return (
