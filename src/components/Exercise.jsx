@@ -51,7 +51,6 @@ class Exercise extends Component {
     this.submitAndSaveExercise(event);
   }
 
-  /** We can probably abstract the quickadd forms */
   render() {
     return (
       <div className="exercise">
@@ -79,6 +78,7 @@ class Exercise extends Component {
                 variant="contained"
                 color="primary"
                 fullWidth
+                type="submit"
               >
                 Submit
               </Button>

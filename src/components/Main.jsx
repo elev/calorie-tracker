@@ -1,19 +1,17 @@
 import React, { Component } from "react";
 import moment from "moment";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Landing from "./Landing";
+import { BrowserRouter } from "react-router-dom";
 import Header from "./Header";
-import Food from "./Food";
-import Exercise from "./Exercise";
-import Goals from "./Goals";
-import ViewMacros from "./ViewMacros";
 import { withStyles } from "@material-ui/core/styles";
 import Snackbar from "@material-ui/core/Snackbar";
+import Routes from "./Routes";
 
 // this component is a GOD class. It needs to be refactored down.
 // article on decomposing react components
 // https://medium.com/dailyjs/techniques-for-decomposing-react-components-e8a1081ef5da
 // this should help and should be the next TODO after we can verify this time clearing stuff working.
+
+// Also using redux will clean this up.... we should refactor to use that SOON
 
 const styles = theme => ({
   main: {
@@ -52,6 +50,8 @@ class Main extends Component {
     this.setEndOfDay = this.setEndOfDay.bind(this);
     this.setEndOfDayTimeout = this.setEndOfDayTimeout.bind(this);
     this.clearEndOfDayTimeout = this.clearEndOfDayTimeout.bind(this);
+
+    this.routeProps = {};
   }
 
   updateCalorieCount(amount, newMacros = {}) {
@@ -103,7 +103,6 @@ class Main extends Component {
   }
 
   clearDay() {
-    // clear the daily values
     // Todos
     // future todo, track history of days
     ///// we will need a database for this. or use local storage
@@ -173,45 +172,13 @@ class Main extends Component {
             calorieCount={this.state.calorieCount}
             dailyGoal={this.state.dailyGoal}
           />
-          <Switch>
-            <Route exact path="/" component={Landing} />
-            <Route
-              path="/add-food"
-              render={routeProps => (
-                <Food
-                  {...routeProps}
-                  updateCalorieCount={this.updateCalorieCount}
-                />
-              )}
-            />
-            <Route
-              path="/add-exercise"
-              render={routeProps => (
-                <Exercise
-                  {...routeProps}
-                  updateCalorieCount={this.updateCalorieCount}
-                  saveExercise={this.saveExercise}
-                />
-              )}
-            />
-            <Route
-              path="/goals"
-              render={routeProps => (
-                <Goals
-                  {...routeProps}
-                  defaultMacros={this.state.macros}
-                  updateGoals={this.updateGoals}
-                  defaultDailyGoal={this.state.dailyGoal}
-                />
-              )}
-            />
-            <Route
-              path="/view-macros"
-              render={routeProps => (
-                <ViewMacros {...routeProps} macros={this.state.macros} />
-              )}
-            />
-          </Switch>
+          <Routes
+            dailyGoal={this.state.dailyGoal}
+            macros={this.state.macros}
+            saveExercise={this.saveExercise}
+            updateCalorieCount={this.updateCalorieCount}
+            updateGoals={this.updateGoals}
+          />
         </div>
       </BrowserRouter>
     );
