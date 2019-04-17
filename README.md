@@ -9,15 +9,6 @@
 ** Food updating the main state √
 ** Exercise updating the main state √
 
-* Daily reset at midnight?
-** install moment
-** const end = moment().endOf('day');
-** const timeout = end.diff(moment())
-** setTimeout
-** Record day, reset state....
-** Recording a day feature is not built yet.
-** This needs to be the next thing we do.
-
 * check if other components aren't tests
 * write tests for the popup toast jawn
 * write tests header count
