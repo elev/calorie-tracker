@@ -8,6 +8,8 @@
 ** goals updating main state goals √
 ** Food updating the main state √
 ** Exercise updating the main state √
+** Snackbar tests
+*** Adding exercise, Adding Food, Updating Goals
 
 * check if other components aren't tests
 * write tests for the popup toast jawn

@@ -36,7 +36,8 @@ class Main extends Component {
         fatGoal: 0,
         carbGoal: 0
       },
-      addedFoodOpen: false,
+      flashMessageOpen: false,
+      flashMessageText: "",
       dayTimeout: 0,
       dayEnd: 0,
       msUntilEndDay: 0
@@ -45,7 +46,7 @@ class Main extends Component {
     this.saveFood = this.saveFood.bind(this);
     this.saveExercise = this.saveExercise.bind(this);
     this.updateGoals = this.updateGoals.bind(this);
-    this.addedFoodClose = this.addedFoodClose.bind(this);
+    this.closeFlashMessage = this.closeFlashMessage.bind(this);
     this.clearDay = this.clearDay.bind(this);
     this.setEndOfDay = this.setEndOfDay.bind(this);
     this.setEndOfDayTimeout = this.setEndOfDayTimeout.bind(this);
@@ -54,6 +55,7 @@ class Main extends Component {
     this.routeProps = {};
   }
 
+  // this method is big. refactor/recompose
   updateCalorieCount(amount, newMacros = {}) {
     const addMacro = (key, oldMacros, newMacros) => {
       return parseInt(oldMacros[key]) + (parseInt(newMacros[key]) || 0);
@@ -73,12 +75,13 @@ class Main extends Component {
     this.setState({
       calorieCount: this.state.calorieCount + amount,
       macros,
-      addedFoodOpen: true
+      flashMessageOpen: true,
+      flashMessageText: "Daily Calories Updated"
     });
   }
 
-  addedFoodClose() {
-    this.setState({ addedFoodOpen: false });
+  closeFlashMessage() {
+    this.setState({ flashMessageOpen: false });
   }
 
   saveExercise(exercise) {
@@ -98,7 +101,9 @@ class Main extends Component {
 
     this.setState({
       macros: newMacros,
-      dailyGoal: dailyGoal
+      dailyGoal: dailyGoal,
+      flashMessageOpen: true,
+      flashMessageText: "Daily Goals Updated"
     });
   }
 
@@ -159,13 +164,14 @@ class Main extends Component {
         <div className={this.props.classes.main}>
           <Snackbar
             anchorOrigin={{ vertical: "top", horizontal: "center" }}
-            open={this.state.addedFoodOpen}
-            onClose={this.addedFoodClose}
+            open={this.state.flashMessageOpen}
+            onClose={this.closeFlashMessage}
+            autoHideDuration={1800}
             ContentProps={{
-              "aria-describedby": "added-food-message-id"
+              "aria-describedby": "flash-message-text"
             }}
             message={
-              <span id="added-food-message-id">Daily Calories Updated</span>
+              <span id="flash-message-text">{this.state.flashMessageText}</span>
             }
           />
           <Header
