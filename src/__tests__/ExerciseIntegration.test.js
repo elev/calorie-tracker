@@ -19,5 +19,9 @@ describe("<Exercise />", () => {
     wrapper.find("form#addExercise").simulate("submit");
 
     expect(componentInstance.state.calorieCount).toEqual(200);
+    expect(componentInstance.state.flashMessageOpen).toEqual(true);
+    expect(componentInstance.state.flashMessageText).toEqual(
+      "Daily Calories Updated"
+    );
   });
 });

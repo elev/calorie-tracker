@@ -31,5 +31,9 @@ describe("<Goals />", () => {
     expect(componentInstance.state.macros.fatGoal).toEqual(50);
     expect(componentInstance.state.macros.proteinGoal).toEqual(150);
     expect(componentInstance.state.macros.carbGoal).toEqual(450);
+    expect(componentInstance.state.flashMessageOpen).toEqual(true);
+    expect(componentInstance.state.flashMessageText).toEqual(
+      "Daily Goals Updated"
+    );
   });
 });

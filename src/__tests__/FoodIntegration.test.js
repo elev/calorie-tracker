@@ -31,5 +31,9 @@ describe("<Food />", () => {
     expect(componentInstance.state.macros.fat).toEqual(16);
     expect(componentInstance.state.macros.protein).toEqual(20);
     expect(componentInstance.state.macros.carbs).toEqual(47);
+    expect(componentInstance.state.flashMessageOpen).toEqual(true);
+    expect(componentInstance.state.flashMessageText).toEqual(
+      "Daily Calories Updated"
+    );
   });
 });
