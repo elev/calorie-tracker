@@ -18,19 +18,28 @@ const ViewMacros = props => {
       <List>
         <ListItem>
           <ListItemText> Protein Goal: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            className={props.classes["align-right"]}
+            id="view-protein-goal"
+          >
             {props.macros.proteinGoal}
           </ListItemText>
         </ListItem>
         <ListItem>
           <ListItemText> Fat Goal: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            className={props.classes["align-right"]}
+            id="view-fat-goal"
+          >
             {props.macros.fatGoal}
           </ListItemText>
         </ListItem>
         <ListItem>
           <ListItemText> Carb Goal: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            id="view-carb-goal"
+            className={props.classes["align-right"]}
+          >
             {props.macros.carbGoal}
           </ListItemText>
         </ListItem>
@@ -38,19 +47,28 @@ const ViewMacros = props => {
       <List>
         <ListItem>
           <ListItemText> Protein: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            className={props.classes["align-right"]}
+            id="view-protein-consumed"
+          >
             {props.macros.protein}
           </ListItemText>
         </ListItem>
         <ListItem>
           <ListItemText> Fat: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            className={props.classes["align-right"]}
+            id="view-fat-consumed"
+          >
             {props.macros.fat}
           </ListItemText>
         </ListItem>
         <ListItem>
           <ListItemText> Carbs: </ListItemText>
-          <ListItemText className={props.classes["align-right"]}>
+          <ListItemText
+            className={props.classes["align-right"]}
+            id="view-carbs-consumed"
+          >
             {props.macros.carbs}
           </ListItemText>
         </ListItem>
