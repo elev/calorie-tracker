@@ -11,7 +11,7 @@
 ** Snackbar tests √
 *** Adding exercise, Adding Food, Updating Goals √
 
-* write test for view macros
+* write test for view macros √
 
 
 * Add popup for updating goals (maybe this is broken????)
