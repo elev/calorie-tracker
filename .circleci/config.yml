@@ -20,6 +20,9 @@ jobs:
     steps:
       - checkout
       - run:
+        name: install
+        command: yarn install
+      - run:
           name: Test
           command: yarn test
 workflows:
