@@ -18,7 +18,7 @@ describe("<Main />", () => {
       dayEnd: moment().add(5, "seconds"),
       calorieCount: 2100,
       macros: {
-        protein: 100,
+        protein: 110,
         fat: 100,
         carbs: 100
       }
