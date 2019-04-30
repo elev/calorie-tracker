@@ -1,6 +1,6 @@
 import React from "react";
 import { mount } from "enzyme";
-import Main from "../Components/Main";
+import Main from "../components/Main";
 
 describe("<Food />", () => {
   it("Food should update Main's calories and macros", () => {
