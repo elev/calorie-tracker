@@ -1,7 +1,7 @@
 import React from "react";
 import { mount } from "enzyme";
 import moment from "moment";
-import Main from "../Components/Main";
+import Main from "../components/Main";
 
 jest.useFakeTimers();
 
