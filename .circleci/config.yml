@@ -19,9 +19,9 @@ jobs:
     executor: heroku/default
     steps:
       - checkout
-      - heroku/install
-      - heroku/deploy-via-git:
-          only-branch: master
+      - run:
+        name: Boo
+        command: echo Hello World
 
 workflows:
   version: 2.1
