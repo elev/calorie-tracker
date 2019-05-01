@@ -13,15 +13,15 @@ jobs:
             yarn install
             echo Testing  
             yarn test
-  deploy:
+  do-something:
     docker:
       - image: circleci/node:10.15.1
     steps:
       - checkout
       - run:
-          name: Boo
+          name: DoSomething
           command: |
-            echo Hello World
+            echo Something
 
 workflows:
   version: 2.1
@@ -31,7 +31,8 @@ workflows:
         filters:
           branches:
             only: master
-      - deploy:
-        requires:
-          - run-tests
+      - do-something:
+        filters:
+          branches:
+            only: master
 
