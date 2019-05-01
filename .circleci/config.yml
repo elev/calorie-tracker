@@ -28,7 +28,7 @@ jobs:
             yarn test
 workflows:
   version: 2.1
-  test:
+  test-and-deploy:
     jobs:
       - test:
         filters:
