@@ -1,9 +1,7 @@
 # Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
-orbs:
-  heroku: circleci/heroku@1.0.0
 jobs:
-  test:
+  run-tests:
     docker:
       - image: circleci/node:10.15.1
     steps:
@@ -15,23 +13,11 @@ jobs:
             yarn install
             echo Testing  
             yarn test
-  deploy:
-    executor: heroku/default # Uses the basic buildpack-deps image, which has the prerequisites for installing heroku's CLI.
-    steps:
-      - checkout
-      - heroku/install
-      - heroku/deploy-via-git:
-          only-branch: master
-
 workflows:
   version: 2.1
   test-and-deploy:
     jobs:
-      - test:
+      - run-tests:
         filters:
           branches:
             only: master
-      - deploy:
-        requires:
-          - test 
-        executor: heroku/default
