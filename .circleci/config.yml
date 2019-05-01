@@ -32,5 +32,6 @@ workflows:
           branches:
             only: master
       - deploy:
-        requires: run-tests
+        requires:
+          - run-tests
 
