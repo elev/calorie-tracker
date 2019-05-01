@@ -15,7 +15,6 @@ jobs:
             yarn test
   deploy:
     steps:
-      - checkout
       - run:
         name: Boo
         command: |
