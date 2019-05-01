@@ -1,7 +1,5 @@
 # Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
-orbs:
-  heroku: circleci/heroku@1.0.0
 jobs:
   run-tests:
     docker:
@@ -16,7 +14,6 @@ jobs:
             echo Testing  
             yarn test
   deploy:
-    executor: heroku/default
     steps:
       - checkout
       - run:
