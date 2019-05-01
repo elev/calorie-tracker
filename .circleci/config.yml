@@ -28,6 +28,7 @@ workflows:
   test-and-deploy:
     jobs:
       - run-tests:
+        type: approval
         filters:
           branches:
             only: master
