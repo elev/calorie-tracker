@@ -14,11 +14,14 @@ jobs:
             echo Testing  
             yarn test
   deploy:
+    docker:
+      - image: circleci/node:10.15.1
     steps:
+      - checkout
       - run:
-        name: Boo
-        command: |
-          echo Hello World
+          name: Boo
+          command: |
+            echo Hello World
 
 workflows:
   version: 2.1
