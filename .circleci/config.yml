@@ -16,7 +16,6 @@ jobs:
             echo Testing  
             yarn test
   deploy:
-    requires: run-tests
     executor: heroku/default
     steps:
       - checkout
@@ -32,4 +31,6 @@ workflows:
         filters:
           branches:
             only: master
-      - deploy
+      - deploy:
+        requires: run-tests
+
