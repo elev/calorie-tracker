@@ -32,6 +32,8 @@ workflows:
           branches:
             only: master
       - do-something:
+        requires:
+          - run-tests
         filters:
           branches:
             only: master
