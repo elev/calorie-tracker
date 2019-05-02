@@ -25,17 +25,12 @@ jobs:
 
 workflows:
   version: 2.1
-  test-and-deploy:
+  build-deploy:
     jobs:
-      - run-tests:
-        type: approval
-        filters:
-          branches:
-            only: master
+      - run-tests
       - do-something:
-        requires:
-          - run-tests
-        filters:
-          branches:
-            only: master
-
+          requires:
+            - run-tests
+          filters:
+            branches:
+              only: master
