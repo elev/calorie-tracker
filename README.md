@@ -10,26 +10,15 @@
 ** Exercise updating the main state √
 ** Snackbar tests √
 *** Adding exercise, Adding Food, Updating Goals √
-
 * write test for view macros √
 
+* Clean up circle ci config
+* Port to react native
+* Run through app to find bugs
+** add bugs to backlog / fix
+* Run through app check for new features
+** Add features to back log/ do them  
 
-* Add popup for updating goals (maybe this is broken????)
-
-
-
-
-
-
-* we need to refactor these components to make them smaller and cleaner.
-* See if theres a better way to 2 way data bind, seems like the parent pass method thing is the way it works...
-* Make screen and buttons look good. Gradients -- https://cssgradient.io/
-* Build save food and save exercise
-* Reiterate and see if anything else needs to be completed
-* use prop types or flow or typescript, research as to the best ones
-* Set up CI
-* Get this badboy live, even if it's just a free heroku
-* Phase 2// weekly or monthly goals?
 * Maybe TDEE Calculator? https://www.surroundedbymath.com/interactive-math/tdee/
 
 
