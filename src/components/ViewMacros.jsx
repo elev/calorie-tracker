@@ -4,14 +4,13 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import { withStyles } from "@material-ui/core/styles";
 
-const styles = theme => ({
+const styles = () => ({
   "align-right": {
     "text-align": "right"
   }
 });
 
 const ViewMacros = props => {
-  const { classes } = props;
 
   return (
     <div className="view-macros">

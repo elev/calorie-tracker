@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { withStyles } from "@material-ui/core/styles";
 import MainMenu from "./MainMenu";
 
 class Landing extends Component {
